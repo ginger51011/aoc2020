@@ -16,7 +16,7 @@ dispatch =
         solve $ Day1.solver2 . map read
       ]
     ),
-    (2, [solve Day2.solver1])
+    (2, [solve Day2.solver1, solve Day2.solver2])
   ]
 
 main = do
