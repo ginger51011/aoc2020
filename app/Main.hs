@@ -1,12 +1,13 @@
 import qualified Data.Maybe
 import qualified Day1
+import qualified Day2
 import System.Environment
 import System.IO
 
 solve :: ([String] -> Maybe Int) -> [String] -> String
 solve _ [] = "No input provided"
 solve solver input =
-  show $ Data.Maybe.fromMaybe (-1) (solver (map read input))
+  show $ Data.Maybe.fromMaybe (-1) (solver input)
 
 dispatch :: [(Int, [[String] -> String])]
 dispatch =
@@ -14,7 +15,8 @@ dispatch =
       [ solve $ Day1.solver1 . map read, -- We want to read these directly to ints
         solve $ Day1.solver2 . map read
       ]
-    )
+    ),
+    (2, [solve Day2.solver1])
   ]
 
 main = do
