@@ -1,0 +1,10 @@
+# Ignore compilation target
+dist-newstyle
+
+# Test texts
+test.txt
+
+# Problem inputs
+data/*
+!data/.gitkeep
+
